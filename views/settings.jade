@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  p Welcome to the #{subtitle} section
+
+  form(name="plan-server", id='settings', action='settings', method="post")
+    div
+      table  
+        thead
+          tr: th 
+              th #{sectiontitle}
+        tbody
+          tr: td Name
+              td
+                div(data-role='fieldcontain')
+                  input(type="text", id="svrname", name="svrname", value=svrname, checked)
+          tr: td Address
+              td
+                div(data-role='fieldcontain')
+                  input(type="text", id="svraddress", name="svraddress", value=svraddress, checked)
+          tr: td Port
+              td
+                div(data-role='fieldcontain')
+                  input(type="text", id="svrport", name="svrport", value=svrport, checked)
+          tr: td API-Prefix
+              td
+                div(data-role='fieldcontain')
+                  input(type="text", id="svrapiprefix", name="svrapiprefix", value=svrapiprefix, checked)
+          tr: td 
+              td
+                actions
+                  input(type="submit", value="save")

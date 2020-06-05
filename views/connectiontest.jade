@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  p Welcome to the #{subtitle} section
+
+  form(name="plan-server-test", id='connectiontest', action='connectiontest', method="post")
+    div
+      table  
+        thead
+          tr: th Name
+              th Address
+        tbody
+          tr: td #{svrname}
+              td #{svrconn}
+          tr: td 
+              td
+                actions
+                  input(type="submit", value="Test connection")
+  
+  if connTry
+    p Connection Result:
+    if connResult
+      p #{connResult}
+  
+  
